@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+(sleep 2; /opt/augment00/start.sh)&
+
+exit 0
