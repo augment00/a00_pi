@@ -4,7 +4,9 @@ RUN mkdir -p /opt/augment00
 
 RUN cd /opt/augment00 && git clone https://github.com/arupiot/deskcontrol.git
 
-RUN pip install -r /opt/augment00/deskcontrol/requirments.txt
+RUN git pull origin master
+
+RUN pip install -r /opt/augment00/deskcontrol/requirements.txt
 
 WORKDIR /opt/augment00
 
