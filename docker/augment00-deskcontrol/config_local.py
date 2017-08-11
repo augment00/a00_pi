@@ -11,3 +11,11 @@ INFLUX_AUTH = {
     "pass": os.environ['INFLUX_PASSWORD'],
     "db": os.environ['INFLUX_DBNAME'],
 }
+
+FIREBASE_AUTH = {
+    "google_api_key":  os.environ['GOOGLE_API_KEY'],
+    "custom_token_url":  os.environ['FIREBASE_CUSTOM_TOKEN_URL'],
+    "auth_domain":  os.environ['FIREBASE_AUTH_DOMAIN'],
+    "db_url":  os.environ['FIREBASE_DB_URL'],
+    "credentials_path":  os.environ['CREDENTIALS_PATH'],
+}

@@ -74,7 +74,7 @@ def update_config():
 
     if config is not None:
         write_config_files(config["config"], CONFIG_DIR, CONFIG_OWNER, 0755)
-        # shutil.copy(creds_path, INSTALLED_CREDS_PATH)
+        shutil.copy(creds_path, INSTALLED_CREDS_PATH)
 
 
 def write_config_files(config, base_dir, owner, mode):

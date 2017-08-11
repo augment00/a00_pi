@@ -82,7 +82,7 @@ def build_bootstrap():
          'docker/augment00-bootstrap' % tag)
     sudo('docker tag augment00/augment00-bootstrap:%s augment00/'
          'augment00-bootstrap:latest' % tag)
-
+    sudo('docker push augment00/augment00-bootstrap:latest')
 
 
 def install_docker():
