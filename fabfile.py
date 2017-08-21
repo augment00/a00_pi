@@ -16,6 +16,7 @@ PYTHON_VERSION = "0.0.2"
 TEST_VERSION = "0.0.1"
 DESKCONTROL_VERSION = "0.0.2"
 BRICKD_VERSION = "0.0.1"
+COMMAND_VERSION = "0.0.1"
 
 JESSIE_VERSION = "2017-04-10-raspbian-jessie-lite"
 
@@ -131,6 +132,15 @@ def build_deskcontrol():
     sudo('docker push augment00/augment00-deskcontrol:%s' % tag)
     sudo('docker tag augment00/augment00-deskcontrol:%s augment00/augment00-deskcontrol:latest' % tag)
     sudo('docker push augment00/augment00-deskcontrol:latest')
+
+
+def build_command():
+    tag = COMMAND_VERSION
+    put("docker", "~")
+    sudo('docker build --no-cache=true -t="augment00/augment00-command:%s" docker/augment00-command' % tag)
+    sudo('docker push augment00/augment00-command:%s' % tag)
+    sudo('docker tag augment00/augment00-command:%s augment00/augment00-command:latest' % tag)
+    sudo('docker push augment00/augment00-command:latest')
 
 
 def build_brickd():
