@@ -18,7 +18,7 @@ DESKCONTROL_VERSION = "0.0.3"
 BRICKD_VERSION = "0.0.1"
 COMMAND_VERSION = "0.0.1"
 
-JESSIE_VERSION = "2017-04-10-raspbian-jessie-lite"
+RASPIAN_VERSION = "RASPBIAN STRETCH LITE sept 2017"
 
 
 ############################################################################
