@@ -1,6 +1,7 @@
 import os
 import subprocess
 import json
+import time
 
 MOUNT_DIR = "/mnt/usb"
 WPA_SUPPLICANT_FILE = "/etc/wpa_supplicant/wpa_supplicant.conf"
@@ -37,6 +38,8 @@ def add_creds(ssid, psk):
     subprocess.call(cmd, shell=True)
     cmd = "sudo wpa_cli reconfigure"
     subprocess.call(cmd, shell=True)
+    time.sleep(4)
+
 
 
 

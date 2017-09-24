@@ -51,8 +51,6 @@ def get_serial():
   return cpu_serial
 
 
-
-
 def update_config():
 
     if not os.path.exists(CONFIG_DIR):
