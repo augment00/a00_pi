@@ -36,9 +36,10 @@ def already_has_creds(ssid, psk):
 def add_creds(ssid, psk):
     cmd = 'wpa_passphrase "%s" "%s" >> /etc/wpa_supplicant/wpa_supplicant.conf' % (ssid, psk)
     subprocess.call(cmd, shell=True)
+    time.sleep(1)
     cmd = "sudo wpa_cli reconfigure"
     subprocess.call(cmd, shell=True)
-    time.sleep(4)
+    time.sleep(3)
 
 
 

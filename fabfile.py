@@ -14,9 +14,9 @@ env.password = PI_PASSWORD
 BOOTSTRAP_VERSION = "0.0.1"
 PYTHON_VERSION = "0.0.2"
 TEST_VERSION = "0.0.1"
-DESKCONTROL_VERSION = "0.0.3"
+DESKCONTROL_VERSION = "0.0.6"
 BRICKD_VERSION = "0.0.1"
-COMMAND_VERSION = "0.0.1"
+COMMAND_VERSION = "0.0.2"
 
 RASPIAN_VERSION = "RASPBIAN STRETCH LITE sept 2017"
 
@@ -45,7 +45,7 @@ def prepare_card():
     _change_graphics_memory()
     install_docker()
     # docker_login(password)
-    _add_bootstrap()
+    add_bootstrap()
     _reduce_logging()
     reduced_writes()
     add_resize()
@@ -119,22 +119,22 @@ def _reduce_logging():
     sudo("chgrp root /etc/rsyslog.conf")
 
 
-def _add_bootstrap():
+def add_bootstrap():
 
-    # build_bootstrap()
-    sudo("mkdir -p /opt/augment00")
-    put("start.sh", "/opt/augment00/start.sh", use_sudo=True)
-    sudo("chmod 755 /opt/augment00/start.sh")
+    # # build_bootstrap()
+    # sudo("mkdir -p /opt/augment00")
+    # put("start.sh", "/opt/augment00/start.sh", use_sudo=True)
+    # sudo("chmod 755 /opt/augment00/start.sh")
 
     put("wifi.py", "/opt/augment00/wifi.py", use_sudo=True)
     sudo("chmod 755 /opt/augment00/wifi.py")
 
-    ## add our own rc.local
-    sudo("rm /etc/rc.local")
-    put("rc.local", "/etc/rc.local", use_sudo=True)
-    sudo("chmod 755 /etc/rc.local")
-    sudo("chown root /etc/rc.local")
-    sudo("chgrp root /etc/rc.local")
+    # ## add our own rc.local
+    # sudo("rm /etc/rc.local")
+    # put("rc.local", "/etc/rc.local", use_sudo=True)
+    # sudo("chmod 755 /etc/rc.local")
+    # sudo("chown root /etc/rc.local")
+    # sudo("chgrp root /etc/rc.local")
 
 
 def add_resize():
