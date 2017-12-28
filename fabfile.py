@@ -7,6 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 from config import PI_PASSWORD
 
 env.hosts = ["%s:%s" % ("raspberrypi.local", 22)]
+# env.hosts = ["%s:%s" % ("10.4.87.210.local", 22)]
 #env.hosts = ["%s:%s" % ("169.254.162.179", 22)]
 env.user = "pi"
 env.password = PI_PASSWORD
@@ -16,7 +17,7 @@ PYTHON_VERSION = "0.0.2"
 TEST_VERSION = "0.0.1"
 DESKCONTROL_VERSION = "0.0.6"
 BRICKD_VERSION = "0.0.1"
-COMMAND_VERSION = "0.0.2"
+COMMAND_VERSION = "0.0.4"
 
 RASPIAN_VERSION = "RASPBIAN STRETCH LITE sept 2017"
 
@@ -208,7 +209,7 @@ def build_deskcontrol():
 def build_command():
     tag = COMMAND_VERSION
     put("docker", "~")
-    sudo('docker build --no-cache=true -t="augment00/augment00-command:%s" docker/augment00-command' % tag)
+    sudo('docker build --no-cache=true -t="augment00/augment00-command:%s" docker/augment00-command2' % tag)
     sudo('docker push augment00/augment00-command:%s' % tag)
     sudo('docker tag augment00/augment00-command:%s augment00/augment00-command:latest' % tag)
     sudo('docker push augment00/augment00-command:latest')
